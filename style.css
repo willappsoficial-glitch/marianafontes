@@ -1,0 +1,232 @@
+:root {
+    --primary: #ff4500; /* Laranja vibrante */
+    --primary-hover: #e03e00;
+    --dark: #121212;
+    --dark-light: #1e1e1e;
+    --text: #ffffff;
+    --text-muted: #b0b0b0;
+    --gradient: linear-gradient(135deg, #ff4500 0%, #ff8c00 100%);
+    --shadow: 0 10px 30px rgba(255, 69, 0, 0.2);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+
+body { background-color: var(--dark); color: var(--text); overflow-x: hidden; }
+
+/* --- Navbar --- */
+.navbar {
+    position: fixed; top: 0; width: 100%; padding: 15px 0;
+    background: rgba(18, 18, 18, 0.95); backdrop-filter: blur(10px);
+    z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.nav-content { display: flex; justify-content: space-between; align-items: center; }
+
+/* Logo Menu (Ajuste Livre) */
+/* Localize isso por volta da linha 24 no seu CSS atual */
+.nav-logo {
+    height: 50px;
+    width: 50px; /* Define largura igual à altura */
+    object-fit: cover; /* Garante que a imagem não fique esticada */
+    border-radius: 50%; /* Transforma o quadrado em um círculo perfeito */
+    border: 2px solid var(--primary); /* Adiciona uma borda laranja fina */
+    box-shadow: 0 0 8px rgba(255, 69, 0, 0.6); /* Adiciona um brilho sutil */
+    transition: 0.3s;
+}
+.nav-logo:hover {
+    transform: rotate(15deg); /* Um pequeno efeito ao passar o mouse */
+}
+.nav-logo:hover { transform: scale(1.05); filter: drop-shadow(0 0 5px rgba(255, 69, 0, 0.8)); }
+
+.nav-links { list-style: none; display: flex; gap: 30px; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--text); font-weight: 600; transition: 0.3s; font-size: 1rem; }
+.nav-links a:hover { color: var(--primary); }
+
+.btn-nav {
+    background: var(--gradient); padding: 10px 25px; border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(255, 69, 0, 0.3);
+}
+
+.menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; color: var(--text); }
+
+/* --- Hero Section --- */
+.hero {
+    height: 100vh; position: relative; display: flex; align-items: center;
+    background: url('bg-hero.jpg') center/cover no-repeat fixed;
+}
+.overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.4));
+}
+.hero-content { position: relative; z-index: 1; max-width: 600px; padding-left: 10px; }
+.hero-content h1 {
+    font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; font-weight: 900;
+}
+.hero-content h1 span { color: transparent; -webkit-text-stroke: 2px var(--primary); }
+.hero-content p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 30px; font-family: 'Open Sans', sans-serif; }
+
+.btn-cta {
+    display: inline-block; padding: 15px 40px; background: var(--gradient);
+    color: white; text-decoration: none; border-radius: 50px; font-weight: bold;
+    font-size: 1.1rem; transition: transform 0.3s, box-shadow 0.3s;
+}
+.btn-cta:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(255, 69, 0, 0.4); }
+
+/* --- Sections Gerais --- */
+.section { padding: 80px 0; }
+.section-title { text-align: center; margin-bottom: 60px; }
+.section-title h2 { font-size: 2.5rem; text-transform: uppercase; margin-bottom: 10px; }
+.line { width: 80px; height: 4px; background: var(--primary); margin: 0 auto; border-radius: 2px; }
+
+/* --- Seção Sobre (Com Foto Mariana) --- */
+.about-content {
+    display: flex; align-items: center; justify-content: center;
+    gap: 60px; margin-bottom: 60px;
+}
+.margin-top-large { margin-top: 60px; }
+
+.about-image-wrapper {
+    position: relative; flex: 1; max-width: 400px;
+    display: flex; justify-content: center;
+}
+.image-frame {
+    position: relative; width: 100%; border-radius: 20px; z-index: 1;
+    animation: floatImage 4s ease-in-out infinite;
+}
+.profile-pic {
+    width: 100%; border-radius: 20px; display: block;
+    border: 3px solid rgba(255, 69, 0, 0.5);
+    filter: brightness(1.1) contrast(1.1);
+}
+.frame-glow {
+    position: absolute; top: 20px; left: 20px; width: 100%; height: 100%;
+    border-radius: 20px; border: 2px solid var(--primary);
+    box-shadow: 0 0 30px rgba(255, 69, 0, 0.4); z-index: -1; transition: 0.3s;
+}
+.about-image-wrapper:hover .frame-glow { top: 10px; left: 10px; box-shadow: 0 0 50px rgba(255, 69, 0, 0.8); }
+
+.about-text { flex: 1; }
+.about-text h3 { font-size: 2.2rem; color: var(--primary); margin-bottom: 10px; text-transform: uppercase; }
+.highlight-text { font-weight: bold; color: var(--text-muted); margin-bottom: 20px; letter-spacing: 1px; }
+.about-text p { font-size: 1.1rem; line-height: 1.8; color: #ddd; margin-bottom: 20px; }
+.btn-text { color: var(--primary); font-weight: bold; text-decoration: none; font-size: 1.1rem; transition: 0.3s; }
+.btn-text:hover { color: white; margin-left: 5px; }
+
+@keyframes floatImage {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+/* --- Features Grid --- */
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.feature-card {
+    background: var(--dark-light); padding: 40px 30px; border-radius: 15px;
+    text-align: center; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s;
+}
+.feature-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+.feature-card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
+
+/* --- Horários --- */
+.schedule-container { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+.schedule-box {
+    background: var(--dark-light); padding: 40px; border-radius: 20px; flex: 1; min-width: 300px;
+    text-align: center; border-left: 5px solid var(--primary);
+}
+.schedule-box ul { list-style: none; margin-top: 20px; font-family: 'Open Sans', sans-serif; }
+.schedule-box li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 1.2rem; }
+
+/* --- Form --- */
+.form-section { background: url('bg-hero.jpg') center/cover fixed; position: relative; }
+.form-section::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.85); }
+.form-wrapper {
+    position: relative; background: rgba(255,255,255,0.05); backdrop-filter: blur(15px);
+    padding: 50px; border-radius: 20px; max-width: 600px; margin: 0 auto;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.input-group { position: relative; margin-bottom: 30px; }
+.input-group input, .input-group select {
+    width: 100%; padding: 15px; background: transparent; border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 10px; color: white; outline: none; transition: 0.3s; font-size: 1rem;
+}
+.input-group label {
+    position: absolute; left: 15px; top: 15px; color: var(--text-muted); pointer-events: none;
+    transition: 0.3s; background: transparent; padding: 0 5px;
+}
+.input-group input:focus, .input-group input:not(:placeholder-shown) { border-color: var(--primary); }
+.input-group input:focus ~ label, .input-group input:not(:placeholder-shown) ~ label {
+    top: -10px; left: 10px; font-size: 0.8rem; color: var(--primary); background: var(--dark);
+}
+.input-group select { color: var(--text); }
+.input-group select option { background: var(--dark); }
+
+button {
+    width: 100%; padding: 15px; background: var(--gradient); border: none; border-radius: 10px;
+    color: white; font-weight: bold; font-size: 1.1rem; cursor: pointer; transition: 0.3s;
+}
+button:hover { opacity: 0.9; transform: scale(1.02); }
+
+/* --- Footer --- */
+footer {
+    background: var(--dark-light); padding: 50px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);
+}
+/* Logo Footer (Ajuste Livre) */
+/* Localize isso por volta da linha 129 no seu CSS atual */
+.footer-logo {
+    width: 150px;  /* Tamanho fixo para garantir o círculo */
+    height: 150px; /* Altura igual à largura */
+    object-fit: cover; /* Garante que a imagem não fique esticada */
+    border-radius: 50%; /* Círculo perfeito */
+    margin-bottom: 20px;
+    border: 4px solid var(--dark-light); /* Borda mais grossa no rodapé */
+    box-shadow: var(--shadow); /* Sombra laranja projetada */
+}
+.socials a { color: var(--text); font-size: 1.5rem; margin: 0 10px; transition: 0.3s; }
+.socials a:hover { color: var(--primary); }
+
+/* Animation Classes */
+.scroll-reveal { opacity: 0; transform: translateY(50px); transition: 1s ease; }
+.scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+    /* Navbar Mobile */
+    .menu-toggle { display: block; z-index: 1001; }
+    
+    .nav-links {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100vh; /* Tela cheia */
+        background: rgba(18, 18, 18, 0.98); /* Fundo sólido */
+        flex-direction: column; justify-content: center;
+        padding: 20px; transform: translateX(100%); transition: transform 0.3s ease-in-out;
+        display: flex; /* Garante flexbox */
+    }
+    .nav-links.active { transform: translateX(0); }
+    .nav-links li { margin: 20px 0; font-size: 1.2rem; }
+
+    /* Hero Mobile */
+    .hero { background-attachment: scroll; /* Corrige bug de imagem fixa no iOS */ }
+    .hero-content h1 { font-size: 2.2rem; } /* Fonte menor */
+    .hero-content p { font-size: 1rem; }
+    .btn-cta { padding: 12px 30px; font-size: 1rem; width: 100%; text-align: center; }
+
+    /* Ajustes Gerais */
+    .section { padding: 50px 0; }
+    .section-title h2 { font-size: 1.8rem; }
+    
+    /* Sobre (Mariana) Mobile */
+    .about-content { flex-direction: column; gap: 40px; text-align: center; }
+    .about-image-wrapper { width: 100%; max-width: 300px; margin: 0 auto; }
+    .about-text h3 { font-size: 1.8rem; }
+    
+    /* Cards Mobile */
+    .features-grid { grid-template-columns: 1fr; }
+    .schedule-box { min-width: 100%; padding: 30px 20px; }
+
+    /* Form Mobile */
+    .form-wrapper { padding: 30px 20px; width: 100%; border: none; background: rgba(0,0,0,0.6); }
+    
+    /* Logos Mobile */
+    .nav-logo { max-height: 45px; }
+}

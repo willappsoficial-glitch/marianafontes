@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariana Fontes | Treinamento Integrado</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <img src="logo.jpeg" alt="Logo MF" class="nav-logo">
+            
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#horarios">Horários</a></li>
+                <li><a href="#inscricao" class="btn-nav">Matricule-se</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content scroll-reveal">
+            <h1>Transforme seu corpo<br><span>Supere seus limites</span></h1>
+            <p>Treinamento funcional personalizado para resultados reais.</p>
+            <a href="#inscricao" class="btn-cta">Agendar Aula Experimental <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </header>
+
+    <section id="sobre" class="section">
+        <div class="container">
+            <div class="section-title scroll-reveal">
+                <h2>Conheça sua Treinadora</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-image-wrapper scroll-reveal">
+                    <div class="image-frame">
+                        <img src="mariana.jpeg" alt="Mariana Fontes Treinadora" class="profile-pic">
+                        <div class="frame-glow"></div>
+                    </div>
+                </div>
+
+                <div class="about-text scroll-reveal">
+                    <h3>Mariana Fontes</h3>
+                    <p class="highlight-text">CREF 006311-G/RN</p>
+                    <p>
+                        Especialista em transformar vidas através do movimento. Com anos de experiência em 
+                        <strong>Treinamento Funcional</strong> e <strong>Treinamento Integrado</strong>, 
+                        minha missão é fazer você superar seus limites com segurança, técnica e motivação.
+                        Aqui não é apenas sobre estética, é sobre performance e saúde real.
+                    </p>
+                    
+                    <a href="#inscricao" class="btn-text">Começar agora <i class="fas fa-angle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="features-grid margin-top-large">
+                <div class="feature-card scroll-reveal">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Funcional Raiz</h3>
+                    <p>Exercícios que preparam seu corpo para o dia a dia com força e agilidade.</p>
+                </div>
+                <div class="feature-card scroll-reveal" style="transition-delay: 200ms;">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Saúde Integral</h3>
+                    <p>Melhore seu condicionamento cardiovascular e reduza o estresse.</p>
+                </div>
+                <div class="feature-card scroll-reveal" style="transition-delay: 400ms;">
+                    <i class="fas fa-users"></i>
+                    <h3>Acompanhamento</h3>
+                    <p>Acompanhamento de perto em cada movimento para garantir sua segurança.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="horarios" class="section dark-bg">
+        <div class="container">
+            <div class="section-title scroll-reveal">
+                <h2>Nossos Horários</h2>
+                <p>Segundas, Quartas e Sextas</p>
+                <div class="line"></div>
+            </div>
+            <div class="schedule-container scroll-reveal">
+                <div class="schedule-box morning">
+                    <i class="fas fa-sun"></i>
+                    <h3>Manhã</h3>
+                    <ul>
+                        <li>05:30h às 06:30h</li>
+                        <li>06:30h às 07:30h</li>
+                    </ul>
+                </div>
+                <div class="schedule-box evening">
+                    <i class="fas fa-moon"></i>
+                    <h3>Noite</h3>
+                    <ul>
+                        <li>17:30h às 18:30h</li>
+                        <li>18:30h às 19:30h</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="inscricao" class="section form-section">
+        <div class="container">
+            <div class="form-wrapper scroll-reveal">
+                <div class="form-header">
+                    <h2>Garanta sua vaga</h2>
+                    <p>Preencha os dados abaixo e entraremos em contato.</p>
+                </div>
+                
+                <form id="gymForm">
+                    <div class="input-group">
+                        <input type="text" id="nome" name="nome" required placeholder=" ">
+                        <label for="nome">Nome Completo</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="tel" id="telefone" name="telefone" required placeholder=" ">
+                        <label for="telefone">WhatsApp (com DDD)</label>
+                    </div>
+
+                    <div class="input-group">
+                        <select id="horario" name="horario" required>
+                            <option value="" disabled selected>Escolha seu horário de treino</option>
+                            <option value="05:30 - Manhã">05:30 às 06:30 (Manhã)</option>
+                            <option value="06:30 - Manhã">06:30 às 07:30 (Manhã)</option>
+                            <option value="17:30 - Noite">17:30 às 18:30 (Noite)</option>
+                            <option value="18:30 - Noite">18:30 às 19:30 (Noite)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" id="btnSubmit">
+                        <span id="btnText">Confirmar Inscrição</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <div id="statusMessage"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <img src="logo.jpeg" alt="Logo MF" class="footer-logo">
+            <p>&copy; 2026 Mariana Fontes Treinamento Integrado. Todos os direitos reservados.</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
